@@ -1,0 +1,109 @@
+Ques-01: Write a C++ program that takes three integers as input from the user and determines the largest of the three using if-else statements.
+
+Sample Input:- Enter the first number: 10
+Enter the second number: 20
+Enter the third number: 15
+
+Sample Output :- The largest number is: 20
+
+#include <iostream>
+
+int main() {
+    int num1, num2, num3, largest;
+
+    std::cout << "Enter the first number: ";
+    std::cin >> num1;
+    std::cout << "Enter the second number: ";
+    std::cin >> num2;
+    std::cout << "Enter the third number: ";
+    std::cin >> num3;
+    if (num1 >= num2 && num1 >= num3) {
+        largest = num1;
+    } else if (num2 >= num1 && num2 >= num3) {
+        largest = num2;
+    } else {
+        largest = num3;
+    }
+    std::cout << "The largest number is: " << largest << std::endl;
+
+    return 0;
+}
+---------------------------------------------------------------
+Ques-02: Write a C++ program that takes an integer score (0-100) as input from the user and prints the corresponding grade using if-else-if statements.
+Grade Criteria:
+A: 90-100
+B: 80-89
+C: 70-79
+D: 60-69
+F: 0-59
+
+Sample Input:- Enter the score: 85
+Sample Output:- Grade: B"
+
+#include <iostream>
+
+int main() {
+    int score;
+    char grade;
+
+    std::cout << "Enter the score: ";
+    std::cin >> score;
+
+    if (score >= 90 && score <= 100) {
+        grade = 'A';
+    } else if (score >= 80 && score < 90) {
+        grade = 'B';
+    } else if (score >= 70 && score < 80) {
+        grade = 'C';
+    } else if (score >= 60 && score < 70) {
+        grade = 'D';
+    } else if (score >= 0 && score < 60) {
+        grade = 'F';
+    } else {
+        std::cout << "Invalid score entered!" << std::endl;
+        return 1; 
+    }
+
+    std::cout << "Grade: " << grade << std::endl;
+
+    return 0;
+}
+------------------------------------------------------------------
+Ques-02: Write a C++ program that takes an integer score (0-100) as input from the user and prints the corresponding grade using if-else-if statements.
+Grade Criteria:
+A: 90-100
+B: 80-89
+C: 70-79
+D: 60-69
+F: 0-59
+
+Sample Input:- Enter the score: 85
+Sample Output:- Grade: B"
+
+#include <iostream>
+
+int main() {
+    int score;
+    char grade;
+    std::cout << "Enter the score: ";
+    std::cin >> score;
+
+    if (score >= 90 && score <= 100) {
+        grade = 'A';
+    } else if (score >= 80 && score < 90) {
+        grade = 'B';
+    } else if (score >= 70 && score < 80) {
+        grade = 'C';
+    } else if (score >= 60 && score < 70) {
+        grade = 'D';
+    } else if (score >= 0 && score < 60) {
+        grade = 'F';
+    } else {
+        std::cout << "Invalid score entered!" << std::endl;
+        return 1;
+    }
+
+    std::cout << "Grade: " << grade << std::endl;
+
+    return 0;
+}
