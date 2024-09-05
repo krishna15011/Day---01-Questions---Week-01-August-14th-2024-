@@ -1,0 +1,105 @@
+Ques-01 Write a C++ function that checks whether an integer is odd or even. If the integer is odd, print "Odd"; otherwise, print "Even."
+
+Sample Input:
+Enter a number: 5
+
+Sample Output:
+Odd
+
+#include <iostream>
+using namespace std;
+
+void checkOddOrEven(int num) {
+    if (num % 2 == 0) {
+        cout << "Even" << endl;
+    } else {
+        cout << "Odd" << endl;
+    }
+}
+
+int main() {
+    int N;
+
+    cout << "Enter a number: ";
+    cin >> N;
+
+    checkOddOrEven(N);
+
+    return 0;
+}
+
+----------------------------------------------
+Ques-02 Write a C++ function that takes a string as input and reverses it.
+
+Sample Input:
+Enter a string: CipherSchools
+
+Sample Output:
+Reversed string: sloohcSrehpiC
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string reverseString(string str) {
+    int n = str.length();
+    for (int i = 0; i < n / 2; ++i) {
+        swap(str[i], str[n - i - 1]);
+    }
+    return str;
+}
+
+int main() {
+    string inputStr;
+
+    cout << "Enter a string: ";
+    cin >> inputStr;
+
+    string reversedStr = reverseString(inputStr);
+    cout << "Reversed string: " << reversedStr << endl;
+
+    return 0;
+}
+-------------------------------------------------------------------------
+Ques-03 Write a C++ function that takes a string as a parameter and checks how many vowels and consonants are in that string.
+Assuming that string contains only lowercase.
+
+Sample Input:
+Enter a string: cipherschools
+
+Sample Output:
+Number of vowels: 4
+Number of consonants: 9
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void countVowelsAndConsonants(string str, int &vowelCount, int &consonantCount) {
+    vowelCount = 0;
+    consonantCount = 0;
+
+    for (char ch : str) {
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+            vowelCount++; 
+        } else if (ch >= 'a' && ch <= 'z') {
+            consonantCount++; 
+        }
+    }
+}
+
+int main() {
+    string inputStr;
+    int vowels = 0, consonants = 0;
+
+    cout << "Enter a string: ";
+    cin >> inputStr;
+
+    countVowelsAndConsonants(inputStr, vowels, consonants);
+
+    cout << "Number of vowels: " << vowels << endl;
+    cout << "Number of consonants: " << consonants << endl;
+
+    return 0;
+}
+
