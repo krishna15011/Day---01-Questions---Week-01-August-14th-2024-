@@ -1,0 +1,20 @@
+Write C++ program to demonstrate how to create dynamic variable using new keyword.
+
+#include <iostream>
+
+int main() {
+    int *intPtr = new int; 
+    *intPtr = 42;         
+
+    float *floatPtr = new float; 
+    *floatPtr = 3.14f;        
+    std::cout << "Value of dynamically allocated integer: " << *intPtr << std::endl;
+    std::cout << "Value of dynamically allocated float: " << *floatPtr << std::endl;
+
+    delete intPtr; 
+    delete floatPtr; 
+    intPtr = nullptr;
+    floatPtr = nullptr;
+
+    return 0;
+}
