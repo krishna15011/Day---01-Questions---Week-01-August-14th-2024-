@@ -1,0 +1,62 @@
+Ques 1: Write a C++ program that declares an integer variable, initializes it, and then declares a pointer that stores the address of this variable. Print the value of the variable using both the variable itself and the pointer.
+
+#include <iostream>
+
+int main() {
+    int num = 42;
+
+    int *ptr = &num;
+
+    std::cout << "Value of num using the variable: " << num << std::endl;
+
+    std::cout << "Value of num using the pointer: " << *ptr << std::endl;
+
+    std::cout << "Address of num: " << &num << std::endl;
+
+    std::cout << "Address stored in pointer: " << ptr << std::endl;
+
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------
+Ques 2: Write a program that declares an array of integers and a pointer that points to the first element of the array. Use pointer arithmetic to print all the elements of the array.
+
+#include <iostream>
+
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};
+
+    int *ptr = arr;
+
+    int arraySize = sizeof(arr) / sizeof(arr[0]);
+
+    std::cout << "Array elements using pointer arithmetic:" << std::endl;
+    for (int i = 0; i < arraySize; ++i) {
+        std::cout << "Element " << i << ": " << *(ptr + i) << std::endl;
+    }
+
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------------
+Ques 3: Create a program that demonstrates the use of a pointer to a pointer. Declare an integer variable, a pointer to the integer, and a pointer to that pointer. Use all three to print the value of the integer.
+
+#include <iostream>
+
+int main() {
+    int num = 100;
+
+    int *ptr = &num;
+
+    int **ptrToPtr = &ptr;
+
+    std::cout << "Value of num using the variable: " << num << std::endl;
+
+    std::cout << "Value of num using the pointer: " << *ptr << std::endl;
+
+    std::cout << "Value of num using the pointer to the pointer: " << **ptrToPtr << std::endl;
+
+    std::cout << "Address of num: " << &num << std::endl;
+    std::cout << "Address stored in ptr (pointer to num): " << ptr << std::endl;
+    std::cout << "Address stored in ptrToPtr (pointer to ptr): " << ptrToPtr << std::endl;
+
+    return 0;
+}
