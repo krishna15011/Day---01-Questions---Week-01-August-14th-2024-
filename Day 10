@@ -1,0 +1,81 @@
+Ques 1: Write a function int findMax(const int arr[], int size) that finds and returns the maximum value in an integer array. Test your function with various arrays in the main() function.
+
+Example:
+
+Input: {1, 5, 3, 9, 2}
+Output: 9
+
+#include <iostream>
+
+int findMax(const int arr[], int size) {
+    int maxVal = arr[0]; 
+
+    for (int i = 1; i < size; ++i) {
+        if (arr[i] > maxVal) {
+            maxVal = arr[i]; 
+        }
+    }
+
+    return maxVal;
+}
+
+int main() {
+    int arr1[] = {1, 5, 3, 9, 2};
+    int arr2[] = {10, 20, 30, 5, 15};
+    int arr3[] = {-10, -5, -30, -3, -20};
+    
+    std::cout << "Max value in arr1: " << findMax(arr1, 5) << std::endl;
+    std::cout << "Max value in arr2: " << findMax(arr2, 5) << std::endl;
+    std::cout << "Max value in arr3: " << findMax(arr3, 5) << std::endl;
+
+    return 0;
+}
+----------------------------------------------------------------------------------
+Ques 2: Write a function bool isPalindrome(const std::string &str) that checks whether a given string is a palindrome (a word, phrase, or sequence that reads the same backward as forward). The function should ignore spaces, punctuation, and case sensitivity. Test your function with various strings in the main() function.
+
+Example:
+
+Input: "A man, a plan, a canal, Panama"
+Output: true
+
+#include <iostream>
+#include <string>
+#include <cctype> 
+
+bool isPalindrome(const std::string &str) {
+    int left = 0;
+    int right = str.length() - 1;
+
+    while (left < right) {
+        while (left < right && !std::isalnum(str[left])) {
+            left++;
+        }
+
+        while (left < right && !std::isalnum(str[right])) {
+            right--;
+        }
+
+       
+        if (std::tolower(str[left]) != std::tolower(str[right])) {
+            return false; 
+        }
+
+        left++;
+        right--;
+    }
+
+    return true; 
+
+int main() {
+    std::string str1 = "A man, a plan, a canal, Panama";
+    std::string str2 = "racecar";
+    std::string str3 = "Hello, World!";
+    std::string str4 = "No lemon, no melon";
+
+    std::cout << "\"" << str1 << "\" is a palindrome: " << (isPalindrome(str1) ? "true" : "false") << std::endl;
+    std::cout << "\"" << str2 << "\" is a palindrome: " << (isPalindrome(str2) ? "true" : "false") << std::endl;
+    std::cout << "\"" << str3 << "\" is a palindrome: " << (isPalindrome(str3) ? "true" : "false") << std::endl;
+    std::cout << "\"" << str4 << "\" is a palindrome: " << (isPalindrome(str4) ? "true" : "false") << std::endl;
+
+    return 0;
+}
